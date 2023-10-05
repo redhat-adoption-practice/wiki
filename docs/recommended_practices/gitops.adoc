@@ -1,0 +1,22 @@
+== Use GitOps with Ansible
+
+image::https://github.com/redhat-adoption-practice/wiki/blob/main/images/gitops.png["GitOps",600,600,align="center"]
+
+Implementing GitOps with Ansible brings numerous benefits to managing and deploying Ansible automation workflows. GitOps leverages the version control capabilities of Git to streamline the deployment process and promote infrastructure-as-code practices. Recommended practices:
+
+- *Version control for Ansible playbooks and configurations*: Store Ansible playbooks, roles, and configuration files in a Git repository to track changes over time, enabling versioning, rollback, and collaboration, and use branches to manage different environments or experimental changes.
+
+- *Infrastructure-as-code (IaC) principles*: Define infrastructure and application configurations as code, maintaining a declarative approach to the desired state of the infrastructure.
+
+- *Continuous Integration and Continuous Deployment (CI/CD)*: Utilize CI/CD pipelines to automate the testing, validation, and deployment of Ansible playbooks and allow Ansible to trigger pipeline execution based on changes to the Git repository, ensuring consistent and controlled deployments.
+
+- *Collaborative workflow*: Encourage collaboration and code review among team members by utilizing Git's pull request mechanism, ensuring quality and compliance before merging changes into the main branch and enabling communication and feedback loops through code reviews, comments, and discussions.
+
+- *How to start*:
+
+Before diving into the steps, let's briefly understand what GitOps is.
+GitOps is a methodology that **uses Git as a single source of truth** for managing infrastructure and application deployments. **It involves storing the desired state** of your infrastructure and applications in Git repositories and using automation to ensure that the actual state matches the desired state.
+Also, we need to define what a `Git webhooks` is, `Git webhooks` are defined as a method to deliver notifications to an external web server whenever certain actions occur on a repository.
+For example, when a repository is updated, this could trigger an event that could trigger CI builds, deploy an environment, or in our case, modify the configuration of our infrastructure.
+A webhook can execute specified commands between apps over the web. The automation controller provides webhook integration with GitHub and GitLab, but for this example, we will be integrating with GitHub.
+
